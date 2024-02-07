@@ -1,0 +1,42 @@
+{% extends "clients/bases/edit_base.html" %}
+{%load static%}
+{%block scripts%}
+<link rel="stylesheet" href="css/style.css">
+{%endblock scripts%}
+{% block title %} Crear Proyecto{% endblock title %}
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container_form text-center">
+    <form method="post" action="">
+        {% csrf_token %}
+        <img src={% static "images/logo.png" %} alt="logo">
+
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="nombre">Nombre de Proyecto: </label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="descripcion">Descripcion del proyecto:  </label>
+                    <textarea name="descripcion" cols="20" rows= "5" id="descripcion"></textarea>
+                    <label for="imagen">Imagenes: </label>
+                    <input type="file" name="imagen" id="imagen" accept="image/*">
+                    {% if field.errors%}
+
+                            {{field.errors}}<br>
+
+                    {%endif%}
+
+                </div>
+            </div>
+
+        <br>
+        <input class="btn btn-secondary" type="submit" value="Ingresar">
+    </form>
+</div>
+  {{ formulario.errors }}
+
+  {{request.files}}
+</form>
+{% endblock content %}

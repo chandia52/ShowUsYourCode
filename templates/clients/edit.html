@@ -1,0 +1,36 @@
+{% extends "clients/bases/edit_base.html" %}
+{%block title%}Editar Usuario{% endblock %}
+{%load static %}
+
+{% block content %} 
+    <div class="container_form text-center">
+        <form method="post" action="">
+            {% csrf_token %}
+            <img src={% static "images/logo.png" %} alt="logo">
+
+            {% for field in form %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="{{field.name}}" class="{% for class in field.label_classes %} {{ class }} {% endfor %}"><br>{{field.label}} </label><br>
+                        <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" id="{{ field.name }}" {% if field.value %} value="{{ field.value }}"{% endif %}>
+                        
+                        {% if field.errors %}
+
+                            {{field.errors}}<br>
+
+                        {% endif %}
+                        {% if li.success_message %}
+                            <div class="alert alert-success mt-3">
+                                {{ li.success_message }}
+                            </div>
+        {% endif %}
+                        
+
+                    </div>
+                </div>
+            {% endfor %}
+        <input type="submit" value="Editar" class="btn btn-primary buttons">
+        <a href="{% url 'home'%}" class="btn btn-secondary buttons">Volver a Inicio</a>
+        </form>
+    </div>
+{% endblock %}}  

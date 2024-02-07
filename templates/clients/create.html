@@ -1,0 +1,55 @@
+{%extends "bases/base_admin.html" %}
+
+{%block title%} Registro {%endblock%}
+
+{%block scripts%} 
+    {%load static%}
+    <link rel="stylesheet" type= "text/css" href="{% static 'css/forms.css'%}">
+
+{%endblock%}
+{#Aqui colocamos nuestros scripts #}
+
+{%block content%}  
+    <form method="post" action="">
+        {% csrf_token %}      
+        <div class="container_form text-center">
+            <img src={% static "images/logo.png" %} alt="logo">
+            <form method="post" action="">
+                {% csrf_token %} 
+                
+                {% for field in form %}
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="{{field.name}} class="{% for class in field.label_clasess%} {{ class }} >
+                            {%endfor%}"><br>{{field.label}} </label><br>
+                            {% if field.errors%}
+    
+                                {{field.errors}}<br>
+    
+                            {%endif%}
+    
+                            {{field}}
+    
+                            
+                        </div>
+                    </div>
+                {%endfor%}
+                {##{{form.as_p}}##}
+                <br>
+            <form>
+                <input class="btn btn-secondary" type="submit" value="Registro">
+                <br>
+                <a href="{% url 'client:login' %}" class= >Ya tienes cuenta? Inicia Sesión</a>  
+        </div>
+        
+    <form>
+        <br>
+        
+        <br>
+        <br>
+    
+    
+{%endblock%}
+
+{%block footer%} {%endblock%}
+{#Aqui colocamos nuestro footer #}

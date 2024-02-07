@@ -1,0 +1,187 @@
+
+.basic_form{
+    width: 380px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+
+}
+
+.container_form{
+    width: 380px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+footer{
+    text-align: center;
+}
+
+footer p{
+    color: #888;
+    font-size: 12px;
+}
+
+.error_input {
+    border: 1px solid red;
+}
+
+.errorlist {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: -1px;
+    font-size: 14px;
+    list-style-type: none;
+    color: red;
+}
+
+.input-field label{
+    color: #acacac;
+    margin: 0px 0px 10px 0px;
+}
+.input-field input{
+    height: 36px;
+    margin-bottom: 10px;
+}
+.input-field input[type=text]:focus + label{
+    color: #acacac;
+}
+
+.input-field input[type=text]:focus{
+    border-bottom: 1px solid #acacac ;
+}
+
+.input-field input[type=password]:focus + label{
+    color: #acacac;
+}
+.input-field input[type=password]:focus{
+    border-bottom: 1px solid #acacac;
+    box-shadow: 0 1px 0 0 #acacac ;
+}
+
+.input-field input[type=password].valid{
+    border-bottom: 1px solid #acacac;
+    box-shadow: 0 1px 0 0 #acacac ;
+}
+
+.input-field input[type=password].invalid{
+    border-bottom: 1px solid #acacac;
+    box-shadow: 0 1px 0 0 #acacac ;
+}
+
+
+
+.input-field .prefix.active{
+    color: #acacac;
+}
+
+.errorlist {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: -1px;
+    font-size: 12px;
+    list-style-type: none; }
+
+.container_form .buttons{
+    padding: 10px;
+    margin: 15px 4px
+
+}
+.container_form img{
+    opacity: 0.7;
+    width: 60px; 
+    margin: 0 10px;
+}
+
+
+.container-fluid img{
+    width: 25px;
+    opacity: 0.8;
+    margin: 4px 10px;
+    filter: drop-shadow( 2px 2px 5px #000 )
+}
+
+.navbar-brand{
+    cursor: pointer;
+}
+
+.header{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.intro {
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    margin: 10px auto; /* Agrega esto */
+    padding: 30px 3px;
+    color: #fff;
+    background-image: linear-gradient(rgba(202, 202, 202, 0.5), rgb(145, 145, 145)),url("/static/images/intro.jpg");
+    box-shadow: 0 1px #757474e8;
+    border-radius: 8px;
+}
+.sub-intro{
+    display: inline-block;
+    padding: 10px 4px;
+    background-color: #acacac;
+    height: auto ;
+    border-radius: 8px ;
+    box-shadow: 1px 1px #858383e8;
+    
+}
+
+.sub-intro h2{
+    font-size: 18px;
+    text-align: center;
+}
+.container h2{
+    margin: 30px 400px ;
+   
+}
+.container_proyects input{
+    position: relative;
+    left: 90%;
+}
+
+.proyectos{
+    background-color: #fafafa;
+    padding: 10px 14px;
+    width: 80%;
+    margin: 6% auto;
+    border: 1px solid #ebebeb ;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 16px 10px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.container-proyectos{
+    margin: 25px auto;
+}
+
+.proyectos img{
+    margin: 50px auto;
+    width: 100%;
+    height: auto;
+    box-shadow: #444444 0px 1px 16px;
+
+}
+
+
+
+textarea{
+    margin: 15px 0px;
+    height: 100px;
+    width: 100%;
+    resize: none;
+}
+
+@media only screen and (max-width: 767px) {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

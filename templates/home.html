@@ -1,0 +1,41 @@
+{%extends "bases/base_admin.html" %}
+{%load static%}
+
+
+{%block title%} Home {%endblock%}
+
+{%block scripts%}
+<link rel="stylesheet" href="{% static "css/forms.css" %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head> 
+{%endblock%}
+{#Aqui colocamos nuestros scripts #}
+{%block content%}
+    <div class="intro text-center">
+        <h3>Bienvenidos a Show us your Code </h3>
+        <div class="sub-intro">
+            <h2>Una pagina donde puedes enseñarnos tus proyectos</h2>
+        </div>
+    </div>
+    <div class="container-proyectos text-center">
+        {%for proyecto in proyectos %}
+            <div class="proyectos">
+                <h2>{{proyecto.nombre}}</h2>
+                <img src="{{proyecto.imagen.url}}" alt="{{proyecto.nombre}} imagen">
+                <p>{{proyecto.descripcion|linebreaks}} </p>
+            </div>
+        {% endfor %}
+    </div>
+
+    
+
+{%endblock%}
+{#Aqui colocamos nuestros proyectos recientes #}
+
+{%block footer%} {%endblock%}
+{#Aqui colocamos nuestro footer #}

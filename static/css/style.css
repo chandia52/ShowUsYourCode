@@ -1,0 +1,15 @@
+.error_message{
+    padding: 10px;
+    margin: 10px;
+    background-color: #C6537B;
+    color: white;
+}
+
+.success_message{
+    padding: 10px ;
+    margin: 10px;
+    background-color: #99d581;
+    color: white;
+}
+
+

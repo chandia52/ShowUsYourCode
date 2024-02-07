@@ -1,0 +1,41 @@
+{% extends "bases/base_admin.html" %}
+{% block title %} Iniciar Sesión {% endblock %}
+
+{% block scripts %}  {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block content %}  
+<div class="container_form text-center">
+        <form method="post" action="">
+            {% csrf_token %}
+            <img src={% static "images/logo.png" %} alt="logo">
+
+            {% for field in form %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="{{field.name}}" class="{% for class in field.label_classes %} {{ class }} {% endfor %}"><br>{{field.label}} </label><br>
+                        <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" id="{{ field.name }}" {% if field.value %} value="{{ field.value }}"{% endif %}>
+                        
+                        {% if field.errors%}
+    
+                                {{field.errors}}<br>
+    
+                            {%endif%}
+
+                    </div>
+                </div>
+            {% endfor %}
+            <br>
+            <input class="btn btn-secondary" type="submit" value="Ingresar">
+        </form>
+    </div>           
+    {% endblock %}
+
+{% block footer %}
+<footer>
+    <p>Crea una cuenta nueva <a href="{% url 'client:create' %}">aqui</a></p> <a href="#">Olvidaste tu contraseña?</a>
+</footer>
+{% endblock %}
+{# Aqui colocamos nuestro footer #}
+
